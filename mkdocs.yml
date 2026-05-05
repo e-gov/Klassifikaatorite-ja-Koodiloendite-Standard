@@ -1,0 +1,16 @@
+site_name: Klassifikaatorite ja koodiloendite standard
+
+theme:
+  name: material
+  language: et
+
+nav:
+  - Avaleht: index.md
+  - Ülevaade: 01-ylevaade.md
+  - Mõisted: 02-moisted.md
+  - Klassifikaator:
+      - Ülevaade: klassifikaator/index.md
+      - Atribuudid: klassifikaator/atribuudid.md
+  - Koodiloend:
+      - Ülevaade: koodiloend/index.md
+      - Atribuudid: koodiloend/atribuudid.md
