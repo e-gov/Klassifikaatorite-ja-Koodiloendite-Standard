@@ -7,10 +7,5 @@ theme:
 nav:
   - Avaleht: index.md
   - Ülevaade: 01-ylevaade.md
-  - Mõisted: 02-moisted.md
-  - Klassifikaator:
-      - Ülevaade: klassifikaator/index.md
-      - Atribuudid: klassifikaator/atribuudid.md
-  - Koodiloend:
-      - Ülevaade: koodiloend/index.md
-      - Atribuudid: koodiloend/atribuudid.md
+  - Klassifikaatorite atribuudid: klassifikaator/atribuudid.md
+  - Koodiloendite atribuudid: koodiloend/atribuudid.md
