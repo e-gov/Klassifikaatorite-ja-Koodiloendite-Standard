@@ -9,3 +9,6 @@ nav:
   - Ülevaade: 01-ylevaade.md
   - Klassifikaatorite atribuudid: klassifikaator/atribuudid.md
   - Koodiloendite atribuudid: koodiloend/atribuudid.md
+
+extra_css:
+  - stylesheets/style.css
