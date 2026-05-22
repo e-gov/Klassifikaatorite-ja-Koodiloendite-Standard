@@ -4,6 +4,6 @@
 
 ## Kiirlingid
 - [Ülevaade](01-ylevaade.md)
-- [Klassifikaatorite kirjeldamine](klassifikaator/atribuutid.md)
-- [Koodiloendite kirjeldamine](koodiloend/atribuutid.md)
+- [Klassifikaatorite kirjeldamine](klassifikaator/atribuudid.md)
+- [Koodiloendite kirjeldamine](koodiloend/atribuudid.md)
 - [GitHub koodivaramu](https://github.com/e-gov/Klassifikaatorite-ja-Koodiloendite-Standard)
