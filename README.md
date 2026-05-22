@@ -1,8 +1,12 @@
-# Klassifikaatorite-ja-Koodiloendite-Standard
+# Klassifikaatorite ja koodiloendite kirjeldusstandard
 
-Käesolev kirjeldusstandard koondab juhised klassifikaatorite ja koodiloendite kirjeldamiseks, kasutamiseks ja haldamiseks.
+Kirjeldusstandard koondab juhised klassifikaatorite ja koodiloendite kirjeldamiseks.
 
 Eesmärgid on:
-- ühtlustada arusaama
-- toetada andmete ristkasutust
-- võimaldada masinloetavat kirjeldamist
+- ühtlustada klassifikaatorite ja koodiloendite kirjeldamist;
+- teha kirjeldamisjuhised mugavalt samast kohast kättesaadavaks;
+- toetada klassifikaatorite ja koodiloendite haldust;
+- siduda kirjeldused rahvusvaheliste mudelite loogikaga;
+- vähendada olukordi, kus sama tüüpi objekte kirjeldatakse eri asutustes erinevalt.
+
+Veebilink: https://e-gov.github.io/Klassifikaatorite-ja-Koodiloendite-Standard/
