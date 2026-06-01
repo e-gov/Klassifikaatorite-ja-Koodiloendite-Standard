@@ -10,11 +10,14 @@ Koodiloendite kirjeldamisel lähtutakse Statistikaameti koodiloendite kirjeldami
 ## 1. Koodiloend
 DDI viide: [CodeList](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/item-types/CodeList/)
 
-Koodiloend kirjeldab lubatud väärtuste loendit tervikuna. Koodiloendi kirjelduses esitatakse loendi tähis, nimetus, kirjeldus, kehtivus, haldaja ja kontaktandmed.
+Koodiloend on piiratud koodide ja kategooriate (koodidele vastavate väärtuste) loend, mis esindavad konkreetse muutuja lubatud väärtusi. Koodiloendid võivad olla nii lineaarsed kui hierarhilised.
+- Koodiloendis olevad koodid ja kategooriad ei kuulu lahutamatult kokku. Erinevates koodiloendites võib samal kategoorial olla erinev kood.
+- Koodiloendi elemendid ei pea igal tasemel katma nähtust kõikselt ja olema üksteist välistavad.
+- Muudatuste korral luuakse uus koodiloend.
 
 | # | Atribuudi nimetus | Määratlus | Kohustuslik | Välja tüüp | Mitmesus | Näide |
 |---|---|---|---|---|---|---|
-| 1 | Tähis (CodeListName) | Koodiloendi tähis. | **Jah** | [NameType](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/composite-types/NameType/) | 0..n | IK_SUGU |
+| 1 | Tähis (Name) | Koodiloendi tähis. | **Jah** | [NameType](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/composite-types/NameType/) | 0..n | IK_SUGU |
 | 2 | Nimetus (Label) | Koodiloendi nimetus. | **Jah** | [LabelType](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/composite-types/LabelType/) | 0..n | Sugu isikukoodist |
 | 3 | Kirjeldus (Description) | Koodiloendi sisu ja eesmärgi kirjeldus. | **Jah** | [StructuredStringType](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/composite-types/StructuredStringType/) | 0..1 | Isiku sugu, mis on tuletatud isikukoodi esimesest numbrist |
 | 4 | Kehtivuse algus (ValidFrom) | Kuupäev, millal koodiloend kehtima hakkas. | Ei | `cogsDate` | 0..1 | 2024-01-01 |

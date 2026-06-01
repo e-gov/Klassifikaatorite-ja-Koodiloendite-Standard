@@ -20,14 +20,11 @@ Standardi eesmärk on toetada klassifikaatorite ja koodiloendite ühtset kirjeld
 
 ## Mida standard kirjeldab?
 
-Standard kirjeldab kaht tüüpi objekti:
+Standard kirjeldab statistiliste klassifikaatorite ja koodiloendite juures kasutusel olevaid atribuute.
 
-- **klassifikaatorid**;
-- **koodiloendid**.
+Klassifikaatorite puhul kirjeldatakse selle perekonda, sarja, versiooni, tasemeid, elemente. Klassifikaatorite puhul on võimalik moodustada vastavustabeleid ning indekseid, seega on standardis ära toodud ka nende objektide atribuutide kirjeldused.
 
-Klassifikaatorite puhul kirjeldatakse klassifikaatori perekonda, sarja, konkreetset klassifikaatorit, tasemeid, elemente, vastavustabeleid ja indekseid.
-
-Koodiloendite puhul kirjeldatakse koodiloendit ning selle elementi.
+Koodiloendite puhul kirjeldatakse loendit ning selle elemente.
 
 **Täielikud kirjeldamisjuhised:**
 

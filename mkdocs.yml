@@ -7,8 +7,8 @@ theme:
 nav:
   - Avaleht: index.md
   - Ülevaade: 01-ylevaade.md
-  - Klassifikaatorite atribuudid: klassifikaator/atribuudid.md
-  - Koodiloendite atribuudid: koodiloend/atribuudid.md
+  - Klassifikaatorite kirjeldamine: klassifikaator/atribuudid.md
+  - Koodiloendite kirjeldamine: koodiloend/atribuudid.md
 
 extra_css:
   - stylesheets/style.css
