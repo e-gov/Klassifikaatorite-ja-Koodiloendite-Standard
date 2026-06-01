@@ -42,7 +42,7 @@ Sama klassifikaatori versioonid moodustavad sarja. Sarja kuuluvatel klassifikaat
 
 ## 3. Statistiline klassifikaator
 
-DDI: [StatisticalClassification](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/item-types/StatisticalClassification/)
+DDI viide: [StatisticalClassification](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/item-types/StatisticalClassification/)
 
 Statistiline klassifikaator on igal tasemel üksteist vastastikku välistavate, kuid kogumina kogu vaadeldavat hulka kirjeldavate kategooriate struktureeritud kogum, mille puhul koodid ja neile vastavad kategooriad on lahutamatult seotud. Klassifikaatorid võivad olla nii versioniseeritavad kui aegpidevad ning lineaarsed või hierarhilised.
 
@@ -78,7 +78,7 @@ Statistiline klassifikaator on igal tasemel üksteist vastastikku välistavate, 
 
 ## 4. Klassifikaatori tase
 
-DDI: [ClassificationLevel](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/item-types/ClassificationLevel/)
+DDI viide: [ClassificationLevel](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/item-types/ClassificationLevel/)
 
 Klassifikaatoril on struktuur, mis koosneb ühest või mitmest tasemest. Tase seostatakse sageli mõistega, mis seda defineerib. Hierarhilises klassifikaatoris rühmitatakse iga taseme klassifikaatori elemendid, välja arvatud kõrgeima taseme elemendid, lähima kõrgema taseme alla. Lineaarsel klassifikaatoril on ainult üks tase.
 
@@ -94,7 +94,7 @@ Klassifikaatoril on struktuur, mis koosneb ühest või mitmest tasemest. Tase se
 
 ## 5. Klassifikaatori element
 
-DDI: [ClassificationItem](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/item-types/ClassificationItem/)
+DDI viide: [ClassificationItem](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/item-types/ClassificationItem/)
 
 Klassifikaatori element tähistab kategooriat klassifikaatori teatud tasemel ning määratleb kategooria sisu ja piirid. Objekti või üksuse saab klassifitseerida ühe ja ainult ühe klassifikaatori elemendi alla igal klassifikaatori tasemel. Kasutatakse ka mõistet „kategooria“.
 
@@ -127,7 +127,7 @@ Täiendavad andmeväljad on Statistikaameti kasutuses olevad lisaväljad. Need e
 
 ## 6. Klassifikaatori vastavustabel
 
-DDI: [ClassificationCorrespondenceTable](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/item-types/ClassificationCorrespondenceTable/)
+DDI viide: [ClassificationCorrespondenceTable](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/item-types/ClassificationCorrespondenceTable/)
 
 Klassifikaatori vastavustabel väljendab seost kahe klassifikaatori vahel. Vastavustabeleid kasutatakse tavaliselt sama klassifikaatorite sarja eri versioonide, erinevate klassifikaatorite sarjade klassifikaatorite, klassifikaatori ja selle variandi või variandi eri versioonide võrdlemiseks. Vastavussuhted esitatakse mõlemas suunas.
 
@@ -168,7 +168,7 @@ Kaardistus ehk vastendus väljendab seost lähteklassifikaatori elemendi ja siht
 
 ## 7. Klassifikaatori indeks
 
-DDI: [ClassificationIndex](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/item-types/ClassificationIndex/)
+DDI viide: [ClassificationIndex](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/item-types/ClassificationIndex/)
 
 Klassifikaatori indeks on klassifikaatori indeksi kirjete järjestatud loend, näiteks tähestikulises või koodi järjestuses. Klassifikaatori indeks võib olla seotud ühe konkreetse või mitme klassifikaatoriga. Indeks näitab seost andmeallikatest leitud teksti, näiteks küsitluste vastuste, haldusdokumentide või vabatekstiliste kirjete, ja ühe või mitme klassifikaatori vahel. Klassifikaatori indeksit võib kasutada statistika kogumisel vastuste klassifikaatori elementidele koodide määramiseks.
 
@@ -188,7 +188,7 @@ Klassifikaatori indeks on klassifikaatori indeksi kirjete järjestatud loend, n�
 
 ### 7.2. Klassifikaatori indeksi kirjed
 
-DDI: [ClassificationIndexEntryType](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/composite-types/ClassificationIndexEntryType/)
+DDI viide: [ClassificationIndexEntryType](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/composite-types/ClassificationIndexEntryType/)
 
 Klassifikaatori indeksi kirje on sõna või lühike tekst, näiteks paikkonna nimi, majandustegevus või ametinimetus, mis kirjeldab objekti, üksuse tüüpi või objekti omadust, mille suhtes klassifikaatori element kehtib, koos vastava klassifikaatori elemendi koodiga.
 
