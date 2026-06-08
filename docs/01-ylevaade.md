@@ -1,44 +1,34 @@
-# Ülevaade
+## Standardi eesmärk
 
-Klassifikaatorite ja koodiloendite standard koondab klassifikaatorite ja koodiloendite kirjeldamise juhised ühtsesse hallatavasse keskkonda. 
+Klassifikaatorite ja koodiloendite kirjeldusstandardis määratletakse ühtsed põhimõtted ja nõuded klassifikaatorite ning koodiloendite kirjeldamiseks. Kirjeldusstandard põhineb rahvusvahelisel standardil [Data Documentation Initiative (DDI) 3.3](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/), mis on laialdaselt kasutatav metaandmete standard sotsiaal-, käitumis- ja majandusteaduste andmete kirjeldamiseks. DDI-Lifecycle’i raamistikku kuuluva standardina võimaldab see hallata metaandmeid kogu andmete elutsükli vältel. 
 
-Põhjalikuma ülevaate klassifikaatoritest ja koodiloenditest leiab [Statistikaameti kodulehelt](https://stat.ee/et/statistikaamet/andmehaldus/klassifikaatorid-ja-koodiloendid).
+Kirjeldusstandardis antakse ülevaade klassifikaatorite ja koodiloendite kirjeldamisel kasutatavatest atribuutidest. Klassifikaatori atribuudid on: perekond, sari, versioon, tase, element, vastavustabel. Koodiloendite puhul kirjeldatakse koodiloendi üldandmed ning element.
+
+Ülevaate klassifikaatoritest ja koodiloendite loomisest ja haldamisest leiab [Statistikaameti kodulehelt](https://stat.ee/et/statistikaamet/andmehaldus/klassifikaatorid-ja-koodiloendid).
 
 Statistikaameti [klassifikaatorite portaalis](https://klassifikaatorid.stat.ee/) on kättesaadavad ameti hallatavad statistilised klassifikaatorid, mida kasutatakse riikliku statistika tegemisel.
 
-## Standardi eesmärk
+**Standardi rakendamine võimaldab:**
 
-Standardi eesmärk on toetada klassifikaatorite ja koodiloendite ühtset kirjeldamist, haldamist ja taaskasutamist. Standard määrab, milliseid välju tuleb klassifikaatori või koodiloendi kohta kirjeldada.
+- ühtlustada klassifikaatorite ja koodiloendite metaandmete kirjeldamist;
+- toetada klassifikaatorite ja koodiloendite mõistetavust ning kasutatavust;
+- siduda klassifikaatorite ja koodiloendite metaandmed rahvusvaheliste mudelite loogikaga.
 
-**Standard aitab:**
+Klassifikaatorite ja koodiloendite metaandmed peavad olema nende kasutajatele kättesaadavad. Kirjeldused koostatakse üldjuhul eesti keeles, kuid kui klassifikaator või koodiloend on kasutusel mitmes keeles, siis peaks põhilised atribuudid olema esitatud ka nendes keeltes.
 
-- ühtlustada klassifikaatorite ja koodiloendite kirjeldamist;
-- teha kirjeldamisjuhised mugavalt samast kohast kättesaadavaks;
-- toetada klassifikaatorite ja koodiloendite haldust;
-- siduda kirjeldused rahvusvaheliste mudelite loogikaga;
-- vähendada olukordi, kus sama tüüpi objekte kirjeldatakse eri asutustes erinevalt.
-
-## Mida standard kirjeldab?
-
-Standard kirjeldab statistiliste klassifikaatorite ja koodiloendite juures kasutusel olevaid atribuute.
-
-Klassifikaatorite puhul kirjeldatakse selle perekonda, sarja, versiooni, tasemeid, elemente. Klassifikaatorite puhul on võimalik moodustada vastavustabeleid ning indekseid, seega on standardis ära toodud ka nende objektide atribuutide kirjeldused.
-
-Koodiloendite puhul kirjeldatakse loendit ning selle elemente.
-
-**Täielikud kirjeldamisjuhised:**
+**Vaata lähemalt:**
 
 - [Klassifikaatorite kirjeldamine](klassifikaator/atribuudid.md)
 - [Koodiloendite kirjeldamine](koodiloend/atribuudid.md)
 
 ## Põhimõisted
 
-**statistiline klassifikaator** – igal tasemel üksteist välistavate elementide ammendav ja struktureeritud kogum, mille puhul koodid ja neile vastavad kategooriad on lahutamatult seotud. Klassifikaatorit nimetatakse ka liigituseks, nomenklatuuriks või nimistuks.
+**klassifikaator** – igal tasemel üksteist välistavate elementide ammendav ja struktureeritud kogum, mille puhul koodid ja neile vastavad kategooriad on lahutamatult seotud.
 
-**koodiloend** – loend, mis moodustub kategooriatest ja neile vastavatest koodidest. Koodiloend ei pea olema ammendav.
+**koodiloend** – loend, mis moodustub kategooriatest ja neile vastavatest koodidest. Eri koodiloendites võivad sama kategooria puhul olla kasutusel erinevad koodid.
 
-**kategooria** – mõiste sõnaline või muu tähis, termin klassifikaatori või koodiloendi mistahes tasemel
+**kategooria** – mõiste sõnaline või muu tähis, termin klassifikaatori või koodiloendi mistahes tasemel.
 
-**kood** – klassifikaatori või koodiloendi kategooriale vastav number, sümbol või nende süsteem andmetöötluse hõlbustamise eesmärgil
+**kood** – klassifikaatori või koodiloendi kategooriale vastav number, sümbol või nende süsteem andmetöötluse hõlbustamise eesmärgil.
 
-**element** – klassifikaatori või koodiloendi objekt, mille moodustab kategooria koos koodiga
+**element** – klassifikaatori või koodiloendi objekt, mille moodustab kategooria koos koodiga.
