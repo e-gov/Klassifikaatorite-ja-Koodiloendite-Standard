@@ -9,6 +9,33 @@
 | Klassifikaatori element | `ClassificationItem` |
 | Vastavustabel | `ClassificationCorrespondenceTable` |
 
+```mermaid
+flowchart TD
+
+CF["Klassifikaatori perekond"]
+CS["Klassifikaatorite sari"]
+SC["Klassifikaator"]
+LV["Klassifikaatori tase"]
+IT["Klassifikaatori element"]
+
+CT["Vastavustabel"]
+MP["Vastendus"]
+
+CF -->|sisaldab| CS
+CS -->|sisaldab| SC
+
+SC -->|koosneb| LV
+LV -->|sisaldab| IT
+
+CT -->|lähteklassifikaator| SC
+CT -->|sihtklassifikaator| SC
+
+CT -->|sisaldab| MP
+
+MP -->|lähteelement| IT
+MP -->|sihtelement| IT
+```
+
 ## 1. Klassifikaatori perekond
 DDI viide: [ClassificationFamily](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/item-types/ClassificationFamily/)
 
