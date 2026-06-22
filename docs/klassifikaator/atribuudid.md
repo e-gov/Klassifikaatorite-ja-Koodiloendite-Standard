@@ -48,6 +48,26 @@ Klassifikaatori perekond on teatud ühise tunnuse (nt liigitatav valdkond) aluse
 | 3 | Kirjeldus (Description) | Klassifikaatorite perekonna sisu ja loomise või kasutamise eesmärki kokku võttev kirjeldus | **Jah** | [StructuredStringType](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/composite-types/StructuredStringType/) | 0..1 | Klassifikaatorite perekond TOOTED sisaldab klassifikaatoreid, mille alusel liigitatakse tooteid ja teenuseid, arvutatakse ekspordi-, impordi- ja tarbijahinnaindeksit ning kaupade ja teenuste väliskaubanduse näitajaid. |
 | 4 | Klassifikaatorite sarjad (ClassificationSeriesReference) | Viide valdkonda kuuluva(te)le klassifikaatori(te) sarja(de)le | **Jah** | [ClassificationSeries](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/item-types/ClassificationSeries/) | 0..n | Nt Statistikaameti klassifikaatorite perekonda TOOTED kuuluvad järgmised klassifikaatorid: Kombineeritud nomenklatuur; Maksebilansi laiendatud teenuste klassifikaator; Majanduslike põhikategooriate klassifikaator; Standardne väliskaubanduse klassifikaator; Toodete ja teenuste klassifikaator; Tööstustoodete loetelu; Tööstustoodete nimistu; Teenuste väliskaubandus |
 
+```mermaid
+flowchart LR
+
+CF["Klassifikaatori perekond<br/><small>ClassificationFamily</small>"]
+
+subgraph ATTR["Atribuudid"]
+  N["Tähis<br/><small>Name</small><br/>0..n"]
+  L["Nimetus<br/><small>Label</small><br/>0..n"]
+  D["Kirjeldus<br/><small>Description</small><br/>0..1"]
+end
+
+CS["Klassifikaatorite sari<br/><small>ClassificationSeries</small>"]
+
+N --> CF
+L --> CF
+D --> CF
+
+CF -->|"sisaldab / viitab<br/>ClassificationSeriesReference<br/>0..n"| CS
+```
+
 ## 2. Klassifikaatorite sari
 DDI viide: [ClassificationSeries](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/item-types/ClassificationSeries/)
 
