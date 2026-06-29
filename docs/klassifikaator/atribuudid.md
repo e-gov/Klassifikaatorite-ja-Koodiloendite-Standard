@@ -84,6 +84,34 @@ Sama klassifikaatori versioonid moodustavad sarja. Sarja kuuluvatel klassifikaat
 | 7 | Kehtiv versioon (CurrentStatisticalClassificationReference) | Viide hetkel kehtivale klassifikaatori versioonile. Viide kehtivale klassifikaatori versioonile võib olla toodud ka eraldi väljal või tähisena selle nimetuse juures. | **Jah** | [StatisticalClassification](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/item-types/StatisticalClassification/) | 0..1 | Ametite klassifikaator 2008 aegpidev |
 | 8 | Omanik (OwnerReference) | Viide organisatsioonile, kes vastutab sarja kuuluvate klassifikaatorite koostamise ja haldamise eest. | **Jah** | [Agent](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/topics/Agent/) | 0..n | Statistikaamet |
 
+```mermaid
+flowchart LR
+
+CS["Klassifikaatorite sari<br/><small>ClassificationSeries</small>"]
+
+subgraph ATTR["Atribuudid"]
+  N["Tähis<br/><small>Name</small><br/>0..n"]
+  L["Nimetus<br/><small>Label</small><br/>0..n"]
+  D["Kirjeldus<br/><small>Description</small><br/>0..1"]
+  K["Kontekst<br/><small>SeriesContext</small><br/>0..1"]
+  T["Teema<br/><small>SubjectArea</small><br/>0..n"]
+end
+
+SC["Klassifikaator<br/><small>StatisticalClassification</small>"]
+AG["Agent<br/><small>Owner</small>"]
+
+N --> CS
+L --> CS
+D --> CS
+K --> CS
+T --> CS
+
+CS -->|"sarja kuuluvad klassifikaatorid<br/>StatisticalClassificationReference<br/>0..n"| SC
+CS -.->|"kehtiv versioon<br/>CurrentStatisticalClassificationReference<br/>0..1"| SC
+
+CS -->|"omanik<br/>OwnerReference<br/>0..n"| AG
+```
+
 ## 3. Klassifikaator
 
 DDI viide: [StatisticalClassification](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/item-types/StatisticalClassification/)
@@ -122,6 +150,45 @@ Kui klassifikaatorist on vaja kasutada ainult osa, nt üht taset või lisada mõ
 | 26 | Haldaja (MaintenanceUnitReference) | Organisatsioon või üksus, kes vastutab klassifikaatori haldamise, st selle uuendamise ja muutmise eest. | **Jah** | [Agent](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/topics/Agent/) | 0..n | Statistikaamet |
 | 27 | Kontaktandmed (ContactPersonReference) | Haldaja kontaktandmed täiendava info saamiseks klassifikaatori kohta. | **Jah** | [Agent](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/topics/Agent/) | 0..n | klassifikaatorid@stat.ee |
 
+```mermaid
+flowchart LR
+
+subgraph CLASS["Atribuudid"]
+  direction TB
+
+  BASIC["Põhiandmed<br/><small>Name · Label · Description</small>"]
+
+  VALID["Kehtivus ja avaldamine<br/><small>IsCurrent · ReleaseDate · TerminationDate<br/>LegalBase · Copyright · IsDisseminationAllowed</small>"]
+
+  VERSION["Versioonimine ja uuendused<br/><small>IsVersion · IsFloating · IsUpdate<br/>UpdatesAllowed · PermissibleUpdates · Updates<br/>ChangesFromPreceding</small>"]
+
+  VARIANT["Variant<br/><small>VariantChangesFromBase · VariantPurpose</small>"]
+end
+
+SC["Klassifikaator<br/><small>StatisticalClassification</small>"]
+
+LV["Klassifikaatori tase<br/><small>ClassificationLevel</small>"]
+REL["Seotud klassifikaator<br/><small>StatisticalClassification</small>"]
+PUB["Publikatsioon<br/><small>Publication</small>"]
+MAT["Lisamaterjal<br/><small>OtherMaterial</small>"]
+AG["Agent<br/><small>MaintenanceUnit / ContactPerson</small>"]
+
+BASIC --> SC
+VALID --> SC
+VERSION --> SC
+VARIANT --> SC
+
+SC -->|"tasemed<br/>LevelContext<br/>0..n"| LV
+
+SC -->|"eelnev / järgnev / lähte- / alusklassifikaator<br/>PredecessorReference · SuccessorReference<br/>DerivedFromReference · VariantOfReference<br/>0..1"| REL
+
+SC -->|"avaldamine<br/>Publication<br/>0..n"| PUB
+
+SC -->|"lisamaterjalid<br/>RelatedOtherMaterialReference<br/>0..n"| MAT
+
+SC -->|"haldaja / kontaktandmed<br/>MaintenanceUnitReference · ContactPersonReference<br/>0..n"| AG
+```
+
 ## 4. Klassifikaatori tase
 
 DDI viide: [ClassificationLevel](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/item-types/ClassificationLevel/)
@@ -137,6 +204,32 @@ Struktuuri järgi on klassifikaatorid kas hierarhilised või lineaarsed. Lineaar
 | 5 | Taseme koodi struktuur (LevelCodeStructure) | Näitab, mitmekohaline kood on ning kuidas taseme kood koosneb numbritest, tähtedest ja eraldajatest. | **Jah** | [CodeValueType](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/composite-types/CodeValueType/) | 0..1 | 4-kohaline numberkood; 2-kohaline tähtkood; 3-kohaline punktiga eraldatud numberkood |
 | 6 | Fiktiivne kood (DummyCode) | Reegel fiktiivsete (klassifikaatori struktuuri mitte kuuluvate) koodide konstrueerimiseks järgmise kõrgema taseme koodidest. Kasutatakse nt juhul, kui klassifikaatori struktuuri korrektseks kuvamiseks on vaja tehnilist koodi (st klassifikaatori struktuuris on koodideta vahetasemed). | Ei | [StructuredStringType](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/composite-types/StructuredStringType/) | 0..n | |
 | 7 | Viide määratlevale mõistele (DefiningConceptReference) | Viide mõistele, mis kirjeldab või defineerib klassifikaatori taset. | Ei | [Concept](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/item-types/Concept/) | 0..n | |
+
+```mermaid
+flowchart LR
+
+LV["Klassifikaatori tase<br/><small>ClassificationLevel</small>"]
+
+subgraph ATTR["Atribuudid"]
+  N["Tähis<br/><small>Name</small><br/>0..n"]
+  L["Nimetus<br/><small>Label</small><br/>0..n"]
+  D["Kirjeldus<br/><small>Description</small><br/>0..n"]
+  LCT["Taseme koodi tüüp<br/><small>LevelCodeType</small><br/>0..1"]
+  LCS["Taseme koodi struktuur<br/><small>LevelCodeStructure</small><br/>0..1"]
+  DC["Fiktiivne kood<br/><small>DummyCode</small><br/>0..n"]
+end
+
+CON["Mõiste<br/><small>Concept</small>"]
+
+N --> LV
+L --> LV
+D --> LV
+LCT --> LV
+LCS --> LV
+DC --> LV
+
+LV -->|"määratlev mõiste<br/>DefiningConceptReference<br/>0..n"| CON
+```
 
 ## 5. Klassifikaatori element
 
@@ -170,6 +263,27 @@ Kui klassifikaatoris on täiendavaid andmevälju, siis võib klassifikaatori kir
 | # | Atribuudi nimetus | Määratlus | Kohustuslik | Välja tüüp | Mitmesus | Näide |
 |---|---|---|---|---|---|---|
 | 1 | Mõõtühik (Measurement Unit) | Vajadusel saab lisada kategooriale mõõtühiku, milles antud objekti/üksust mõõdetakse. | Ei | Kontrollsõnastik / mitmekeelne tekst | 0..n | kg; euro; protsent |
+
+```mermaid
+flowchart LR
+
+subgraph ATTR["Atribuudid"]
+  direction TB
+
+  BASIC["Põhiandmed<br/><small>Name · Label · Description<br/>ItemCode / Value</small>"]
+
+  SCOPE["Kategooria ulatus<br/><small>Includes · IncludesAlso · Excludes</small>"]
+
+  VALID["Muudatused ja kehtivus<br/><small>FutureEvents · ChangesFromPriorVersion · Updates<br/>ValidFrom · ValidTo · IsGenerated · IsValid</small>"]
+end
+
+IT["Klassifikaatori element<br/><small>ClassificationItem</small>"]
+
+BASIC --> IT
+SCOPE --> IT
+VALID --> IT
+```
+
 
 ## 6. Klassifikaatori vastavustabel
 
