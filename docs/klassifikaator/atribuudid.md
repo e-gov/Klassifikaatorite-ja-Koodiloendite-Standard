@@ -341,9 +341,9 @@ Klassifikaatori vastavustabel väljendab seost kahe klassifikaatori vahel.
 | 4 | Sihttase (TargetLevelReference / Target Level) | Viide sihtklassifikaatori tasemele, mille piires vastavus koostatakse. Kui taset ei näidata, saab lähteklassifikaatori elemente määrata sihtklassifikaatori mis tahes tasemele. | Ei | [ClassificationLevel](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/item-types/ClassificationLevel/) | 0..1 | 3. tase |
 | 5 | Kardinaalsus (RelationshipMappingType / Cardinality) | Määrab lähte- ja sihtklassifikaatori elementide vahelise suhte tüübi. Vastavustabelis võib määratleda 1:1 (üks ühele), 1:N (üks mitmele), N:1 (mitu ühele) või M:N (mitu mitmele) suhte. | Ei | [CodeValueType](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/composite-types/CodeValueType/) | 0..1 | 1:1 |
 
-### 6.3. Vastendus/kaardistus
+### 6.3. Vastendus
 
-Kaardistus ehk vastendus väljendab seost lähteklassifikaatori elemendi ja sihtklassifikaatori elemendi vahel. Vastendus peaks täpsustama, kas kahe klassifikaatori elemendi vaheline seos on osaline või täielik. Sõltuvalt vastavustabeli seose tüübist võib ühe lähte- või sihtklassifikaatori elemendi kohta olla mitu vastendust. DDI-s vastab sellele  [ClassificationMapType](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/composite-types/ClassificationMapType/?highlight=classificationmaptype).
+Vastendus väljendab seost lähteklassifikaatori elemendi ja sihtklassifikaatori elemendi vahel. Vastendus peaks täpsustama, kas kahe klassifikaatori elemendi vaheline seos on osaline või täielik. Sõltuvalt vastavustabeli seose tüübist võib ühe lähte- või sihtklassifikaatori elemendi kohta olla mitu vastendust. DDI-s vastab sellele  [ClassificationMapType](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/composite-types/ClassificationMapType/?highlight=classificationmaptype).
 
 | # | Atribuudi nimetus | Määratlus | Kohustuslik | Välja tüüp | Mitmesus | Näide |
 |---|---|---|---|---|---|---|
@@ -374,7 +374,7 @@ SRC_LV["Lähtetase<br/><small>ClassificationLevel<br/>SourceLevelReference · 0.
 
 TGT_LV["Sihttase<br/><small>ClassificationLevel<br/>TargetLevelReference · 0..1</small>"]
 
-AG["Agent<br/><small>Owner · Maintenance Unit · Contact Person<br/>0..n</small>"]
+AG["Agent<br/><small>Owner · Maintenance Unit<br/>Contact Person · 0..n</small>"]
 
 PUB["Publikatsioon<br/><small>Publication<br/>0..n</small>"]
 
@@ -384,9 +384,9 @@ subgraph MAPATTR["Vastenduse atribuudid"]
   MAPINFO["Seose täpsustus<br/><small>On lõplik · Kehtiv alates · Kehtiv kuni</small>"]
 end
 
-SRC_IT["Lähteelement<br/><small>ClassificationItem<br/>SourceClassificationItemReference · 0..1</small>"]
+SRC_IT["Lähteelement<br/><small>ClassificationItem<br/>SourceClassificationItemReference<br/>0..1</small>"]
 
-TGT_IT["Sihtelement<br/><small>ClassificationItem<br/>TargetClassificationItemReference · 0..1</small>"]
+TGT_IT["Sihtelement<br/><small>ClassificationItem<br/>TargetClassificationItemReference<br/>0..1</small>"]
 
 BASIC --> CT
 ADMIN --> CT
