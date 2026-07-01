@@ -136,7 +136,7 @@ Kui klassifikaatorist on vaja kasutada ainult osa, nt üht taset või lisada mõ
 | 12 | Eelnev klassifikaator (PredecessorReference) | Nende klassifikaatorite puhul, mis on versioonid või uuendused, viide eelnevale klassifikaatorile või versioonile, mille järglane antud klassifikaator on. | Ei | [StatisticalClassification](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/item-types/StatisticalClassification/) | 0..1 |  |
 | 13 | Järgnev klassifikaator (SuccessorReference) | Nende klassifikaatorite puhul, mis on versioonid või uuendused, viide järgmisele kehtivale klassifikaatorile või selle versioonile. | Ei | [StatisticalClassification](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/item-types/StatisticalClassification/) | 0..1 |  |
 | 14 | Lähteklassifikaator (DerivedFromReference) | Näitab klassifikaatori versiooni, millest antud klassifikaator on tuletatud. | Ei | [StatisticalClassification](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/item-types/StatisticalClassification/) | 0..1 | Rahvusvaheline ametite klassifikaator ISCO-08 |
-| 15 | Muudatused võrreldes eelmise versiooni või uuendusega (ChangesFromPreceding) | Kokkuvõte muudatuste olemusest või sisust võrreldes eelmise versiooni või uuendusega. | Ei | [StructuredStringType](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/composite-types/StructuredStringType/) | 0..1 |  |
+| 15 | Muudatused võrreldes eelmisega (ChangesFromPreceding) | Kokkuvõte muudatuste olemusest või sisust võrreldes eelmise versiooni või uuendusega. | Ei | [StructuredStringType](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/composite-types/StructuredStringType/) | 0..1 |  |
 | 16 | Lisamaterjalid (RelatedOtherMaterialReference) | Viide lisamaterjalidele, näiteks failidele kas klassifikaatori enda või selgitavate märkustega. | Ei | [OtherMaterial](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/item-types/OtherMaterial/) | 0..n | Klassifikaator .xlsx-failina |
 | 17 | Versioon (IsVersion) | Viide, kas klassifikaator on versioon. | Ei | `boolean` | 0..1 |  |
 | 18 | Aegpidevus (IsFloating) | Viide, kas klassifikaator on aegpidev. | Ei | `boolean` | 0..1 | Jah |
@@ -154,24 +154,22 @@ Kui klassifikaatorist on vaja kasutada ainult osa, nt üht taset või lisada mõ
 flowchart LR
 
 subgraph CLASS["Atribuudid"]
-  direction TB
+  BASIC["Põhiandmed<br/><small>Tähis · Nimetus · Kirjeldus</small>"]
 
-  BASIC["Põhiandmed<br/><small>Name · Label · Description</small>"]
+  VALID["Kehtivus ja avaldamine<br/><small>Kehtivus · Kehtiv alates · Kehtiv kuni<br/>Õiguslik alus · Autoriõigus · Levitamine on lubatud</small>"]
 
-  VALID["Kehtivus ja avaldamine<br/><small>IsCurrent · ReleaseDate · TerminationDate<br/>LegalBase · Copyright · IsDisseminationAllowed</small>"]
+  VERSION["Versioonimine ja uuendused<br/><small>Versioon · Aegpidevus · Uuendus<br/>Uuendused on lubatud · Lubatavad uuendused · Uuendused<br/>Muudatused võrreldes eelmisega</small>"]
 
-  VERSION["Versioonimine ja uuendused<br/><small>IsVersion · IsFloating · IsUpdate<br/>UpdatesAllowed · PermissibleUpdates · Updates<br/>ChangesFromPreceding</small>"]
-
-  VARIANT["Variant<br/><small>VariantChangesFromBase · VariantPurpose</small>"]
+  VARIANT["Variant<br/><small>Muudatused võrreldes baasklassifikaatoriga · Variandi loomise põhjus</small>"]
 end
 
 SC["Klassifikaator<br/><small>StatisticalClassification</small>"]
 
 LV["Klassifikaatori tase<br/><small>ClassificationLevel</small>"]
 REL["Seotud klassifikaator<br/><small>StatisticalClassification</small>"]
-PUB["Publikatsioon<br/><small>Publication</small>"]
-MAT["Lisamaterjal<br/><small>OtherMaterial</small>"]
-AG["Agent<br/><small>MaintenanceUnit / ContactPerson</small>"]
+PUB["Publikatsioon<br/><small>Avaldamine</small>"]
+MAT["Lisamaterjal<br/><small>Lisamaterjalid</small>"]
+AG["Agent<br/><small>Haldaja / Kontaktandmed</small>"]
 
 BASIC --> SC
 VALID --> SC
@@ -268,13 +266,11 @@ Kui klassifikaatoris on täiendavaid andmevälju, siis võib klassifikaatori kir
 flowchart LR
 
 subgraph ATTR["Atribuudid"]
-  direction TB
+  BASIC["Põhiandmed<br/><small>Tähis · Nimetus · Kirjeldus<br/>Väärtus</small>"]
 
-  BASIC["Põhiandmed<br/><small>Name · Label · Description<br/>ItemCode / Value</small>"]
+  SCOPE["Ulatus<br/><small>Kaasa arvatud · Lisaks kaasa arvatud · Välja arvatud</small>"]
 
-  SCOPE["Kategooria ulatus<br/><small>Includes · IncludesAlso · Excludes</small>"]
-
-  VALID["Muudatused ja kehtivus<br/><small>FutureEvents · ChangesFromPriorVersion · Updates<br/>ValidFrom · ValidTo · IsGenerated · IsValid</small>"]
+  VALID["Muudatused ja kehtivus<br/><small>Tuleviku sündmused · Muudatused eelnevast versioonist · Uuendused<br/>Kehtiv alates · Kehtiv kuni · On genereeritud · On kehtiv</small>"]
 end
 
 IT["Klassifikaatori element<br/><small>ClassificationItem</small>"]
