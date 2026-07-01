@@ -12,28 +12,51 @@
 ```mermaid
 flowchart TD
 
-CF["Klassifikaatori perekond"]
-CS["Klassifikaatorite sari"]
-SC["Klassifikaator"]
-LV["Klassifikaatori tase"]
-IT["Klassifikaatori element"]
+subgraph HIER["Klassifikaatori struktuur"]
+  CF["Klassifikaatori perekond<br/><small>ClassificationFamily</small>"]
+  CS["Klassifikaatorite sari<br/><small>ClassificationSeries</small>"]
+  SC["Klassifikaator<br/><small>StatisticalClassification</small>"]
+  LV["Klassifikaatori tase<br/><small>ClassificationLevel</small>"]
+  IT["Klassifikaatori element<br/><small>ClassificationItem</small>"]
 
-CT["Vastavustabel"]
-MP["Vastendus"]
+  CF -->|koondab| CS
+  CS -->|sisaldab versioone| SC
+  SC -->|kirjeldab tasemeid| LV
+end
 
-CF -->|sisaldab| CS
-CS -->|sisaldab| SC
+subgraph CORR["Vastavustabel"]
+  CT["Vastavustabel<br/><small>ClassificationCorrespondenceTable</small>"]
+  MP["Vastendus<br/><small>ClassificationMapType</small>"]
 
-SC -->|koosneb| LV
-LV -->|sisaldab| IT
+  SRC_SC["Lähteklassifikaator<br/><small>StatisticalClassification</small>"]
+  TGT_SC["Sihtklassifikaator<br/><small>StatisticalClassification</small>"]
 
-CT -->|lähteklassifikaator| SC
-CT -->|sihtklassifikaator| SC
+  SRC_LV["Lähtetase<br/><small>ClassificationLevel</small>"]
+  TGT_LV["Sihttase<br/><small>ClassificationLevel</small>"]
 
-CT -->|sisaldab| MP
+  SRC_IT["Lähteelement<br/><small>ClassificationItem</small>"]
+  TGT_IT["Sihtelement<br/><small>ClassificationItem</small>"]
 
-MP -->|lähteelement| IT
-MP -->|sihtelement| IT
+  CT -->|lähteklassifikaator| SRC_SC
+  CT -->|sihtklassifikaator| TGT_SC
+
+  CT -.->|lähtetase| SRC_LV
+  CT -.->|sihttase| TGT_LV
+
+  CT -->|sisaldab| MP
+
+  MP -->|lähteelement| SRC_IT
+  MP -->|sihtelement| TGT_IT
+end
+
+SRC_SC -.-> SC
+TGT_SC -.-> SC
+
+SRC_LV -.-> LV
+TGT_LV -.-> LV
+
+SRC_IT -.-> IT
+TGT_IT -.-> IT
 ```
 
 ## 1. Klassifikaatori perekond
