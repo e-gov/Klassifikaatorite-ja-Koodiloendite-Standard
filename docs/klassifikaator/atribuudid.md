@@ -12,7 +12,7 @@
 ```mermaid
 flowchart TD
 
-subgraph HIER["Klassifikaatori struktuur"]
+subgraph HIER["Klassifikaatori kirjeldusobjektid"]
   CF["Klassifikaatori perekond<br/><small>ClassificationFamily</small>"]
   CS["Klassifikaatorite sari<br/><small>ClassificationSeries</small>"]
   SC["Klassifikaator<br/><small>StatisticalClassification</small>"]
@@ -352,3 +352,59 @@ Kaardistus ehk vastendus väljendab seost lähteklassifikaatori elemendi ja siht
 | 3 | On lõplik (IsComplete) | Märkeruut, mis määrab, kas kahe klassifikaatori elemendi vaheline seos on osaline või täielik. | Ei | `boolean` | 0..1 | Jah |
 | 4 | Kehtiv alates (ValidFrom) | Kuupäev, millest alates vastendus kehtib. Kuupäev tuleb määrata, kui vastendus kuulub aegpidevasse vastavustabelisse. | Tingimuslik | `kuupäev` | 0..1 | 2019-04-15 |
 | 5 | Kehtiv kuni (ValidTo) | Kuupäev, mil vastendus muutus kehtetuks. Kuupäev tuleb määrata, kui vastendus kuulub aegpidevasse vastavustabelisse ja see ei ole enam kehtiv. | Tingimuslik | `kuupäev` | 0..1 |  |
+
+```mermaid
+flowchart LR
+
+CT["Vastavustabel<br/><small>ClassificationCorrespondenceTable</small>"]
+
+subgraph ATTR["Atribuudid"]
+  BASIC["Põhiandmed<br/><small>Tähis · Nimetus · Kirjeldus</small>"]
+
+  ADMIN["Haldus ja avaldamine<br/><small>Omanikud · Haldajad · Kontaktisikud<br/>Publikatsioonid</small>"]
+
+  RELDESC["Seose kirjeldus<br/><small>Aegpideva vastavuse kuupäev<br/>Kardinaalsus</small>"]
+end
+
+SRC_SC["Lähteklassifikaator<br/><small>StatisticalClassification<br/>SourceClassificationReference · 0..1</small>"]
+
+TGT_SC["Sihtklassifikaator<br/><small>StatisticalClassification<br/>TargetClassificationReference · 0..n</small>"]
+
+SRC_LV["Lähtetase<br/><small>ClassificationLevel<br/>SourceLevelReference · 0..1</small>"]
+
+TGT_LV["Sihttase<br/><small>ClassificationLevel<br/>TargetLevelReference · 0..1</small>"]
+
+AG["Agent<br/><small>Owner · Maintenance Unit · Contact Person<br/>0..n</small>"]
+
+PUB["Publikatsioon<br/><small>Publication<br/>0..n</small>"]
+
+MP["Vastendus<br/><small>ClassificationMapType</small>"]
+
+subgraph MAPATTR["Vastenduse atribuudid"]
+  MAPINFO["Seose täpsustus<br/><small>On lõplik · Kehtiv alates · Kehtiv kuni</small>"]
+end
+
+SRC_IT["Lähteelement<br/><small>ClassificationItem<br/>SourceClassificationItemReference · 0..1</small>"]
+
+TGT_IT["Sihtelement<br/><small>ClassificationItem<br/>TargetClassificationItemReference · 0..1</small>"]
+
+BASIC --> CT
+ADMIN --> CT
+RELDESC --> CT
+
+CT -->|"lähteklassifikaator"| SRC_SC
+CT -->|"sihtklassifikaator"| TGT_SC
+
+CT -.->|"lähtetase"| SRC_LV
+CT -.->|"sihttase"| TGT_LV
+
+CT -->|"omanik / haldaja / kontakt"| AG
+CT -->|"publikatsioonid"| PUB
+
+CT -->|"sisaldab"| MP
+
+MAPINFO --> MP
+
+MP -->|"lähteelement"| SRC_IT
+MP -->|"sihtelement"| TGT_IT
+```
