@@ -268,9 +268,9 @@ flowchart LR
 subgraph ATTR["Atribuudid"]
   BASIC["Põhiandmed<br/><small>Tähis · Nimetus · Kirjeldus<br/>Väärtus</small>"]
 
-  SCOPE["Ulatus<br/><small>Kaasa arvatud · Lisaks kaasa arvatud · Välja arvatud</small>"]
+  SCOPE["Ulatus<br/><small>Kaasa arvatud · Lisaks kaasa arvatud<br/>Välja arvatud</small>"]
 
-  VALID["Muudatused ja kehtivus<br/><small>Tuleviku sündmused · Muudatused eelnevast versioonist · Uuendused<br/>Kehtiv alates · Kehtiv kuni · On genereeritud · On kehtiv</small>"]
+  VALID["Muudatused ja kehtivus<br/><small>Tuleviku sündmused<br/>Muudatused eelnevast versioonist<br/>Uuendused · Kehtiv alates<br/>Kehtiv kuni · On genereeritud<br/>On kehtiv</small>"]
 end
 
 IT["Klassifikaatori element<br/><small>ClassificationItem</small>"]
