@@ -153,44 +153,46 @@ Kui klassifikaatorist on vaja kasutada ainult osa, nt üht taset või lisada mõ
 ```mermaid
 flowchart LR
 
-subgraph ATTR["Atribuudid"]
-  direction TB
+SC["Klassifikaator<br/><small>StatisticalClassification</small>"]
 
+subgraph ATTR["Atribuudid"]
   BASIC["Põhiandmed<br/><small>Tähis · Nimetus · Kirjeldus</small>"]
 
-  VALID["Kehtivus ja avaldamine<br/><small>Kehtivus · Kehtiv alates · Kehtiv kuni<br/>Õiguslik alus · Autoriõigus · Levitamine on lubatud</small>"]
+  VALID["Kehtivus ja avaldamine<br/><small>Kehtivus · Kehtiv alates · Kehtiv kuni<br/>Õiguslik alus · Autoriõigus<br/>Levitamine on lubatud</small>"]
 
   VERSION["Versioonimine ja uuendused<br/><small>Versioon · Aegpidevus · Uuendus<br/>Uuendused on lubatud · Lubatavad uuendused<br/>Uuendused · Muudatused võrreldes eelmisega</small>"]
 
   VARIANT["Variant<br/><small>Muudatused võrreldes baasklassifikaatoriga<br/>Variandi loomise põhjus</small>"]
 end
 
-SC["Klassifikaator<br/><small>StatisticalClassification</small>"]
+LV["Klassifikaatori tase<br/><small>ClassificationLevel</small>"]
 
-subgraph RELS["Seosed"]
-  direction TB
+REL1["Eelnev / järgnev klassifikaator<br/><small>PredecessorReference · SuccessorReference<br/>0..1</small>"]
 
-  LV["Klassifikaatori tase<br/><small>ClassificationLevel<br/>LevelContext · 0..n</small>"]
+REL2["Lähte- / alusklassifikaator<br/><small>DerivedFromReference · VariantOfReference<br/>0..1</small>"]
 
-  REL["Seotud klassifikaator<br/><small>StatisticalClassification<br/>PredecessorReference · SuccessorReference<br/>DerivedFromReference · VariantOfReference<br/>0..1</small>"]
+PUB["Publikatsioon<br/><small>Publication<br/>0..n</small>"]
 
-  PUB["Publikatsioon<br/><small>PublicationType<br/>Publication · 0..n</small>"]
+MAT["Lisamaterjal<br/><small>RelatedOtherMaterialReference<br/>0..n</small>"]
 
-  MAT["Lisamaterjal<br/><small>OtherMaterial<br/>RelatedOtherMaterialReference · 0..n</small>"]
-
-  AG["Agent<br/><small>MaintenanceUnitReference · ContactPersonReference<br/>0..n</small>"]
-end
+AG["Agent<br/><small>MaintenanceUnitReference · ContactPersonReference<br/>0..n</small>"]
 
 BASIC --> SC
 VALID --> SC
 VERSION --> SC
 VARIANT --> SC
 
-SC -->|tasemed| LV
-SC -->|seotud klassifikaatorid| REL
-SC -->|avaldamine| PUB
-SC -->|lisamaterjalid| MAT
-SC -->|haldaja / kontaktandmed| AG
+SC -->|"tasemed<br/>LevelContext<br/>0..n"| LV
+
+SC -->|"versiooniseos"| REL1
+
+SC -->|"tuletus / variant"| REL2
+
+SC -->|"avaldamine"| PUB
+
+SC -->|"lisamaterjalid"| MAT
+
+SC -->|"haldaja / kontaktandmed"| AG
 ```
 
 ## 4. Klassifikaatori tase
