@@ -20,8 +20,8 @@ Koodiloend on piiratud koodide ja kategooriate (koodidele vastavate väärtuste)
 | 1 | Tähis (Name) | Koodiloendi tähis. | **Jah** | [NameType](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/composite-types/NameType/) | 0..n | IK_SUGU |
 | 2 | Nimetus (Label) | Koodiloendi nimetus. | **Jah** | [LabelType](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/composite-types/LabelType/) | 0..n | Sugu isikukoodist |
 | 3 | Kirjeldus (Description) | Koodiloendi sisu ja eesmärgi kirjeldus. | **Jah** | [StructuredStringType](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/composite-types/StructuredStringType/) | 0..1 | Isiku sugu, mis on tuletatud isikukoodi esimesest numbrist |
-| 4 | Kehtivuse algus (ValidFrom) | Kuupäev, millal koodiloend kehtima hakkas. | Ei | `cogsDate` | 0..1 | 2024-01-01 |
-| 5 | Kehtivuse lõpp (ValidTo) | Kuupäev, millal koodiloend muudeti kehtetuks. | Ei | `cogsDate` | 0..1 | 2024-12-31 |
+| 4 | Kehtivuse algus (ValidFrom) | Kuupäev, millal koodiloend kehtima hakkas. | Ei | `kuupäev` | 0..1 | 2024-01-01 |
+| 5 | Kehtivuse lõpp (ValidTo) | Kuupäev, millal koodiloend muudeti kehtetuks. | Ei | `kuupäev` | 0..1 | 2024-12-31 |
 | 6 | Omanik/haldaja (MaintenanceUnitReference) | Organisatsioon või üksus, kes vastutab koodiloendi haldamise (st selle uuendamise ja muutmise) eest. | **Jah** | [Agent](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/item-types/Agent/) | 0..n | Statistikaamet |
 | 7 | Kontaktandmed (ContactPersonReference) | E-posti aadress või telefon, kust saab täiendavat infot koodiloendi kohta. | **Jah** | [Agent](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/item-types/Agent/) | 0..n | klassifikaatorid@stat.ee |
 
