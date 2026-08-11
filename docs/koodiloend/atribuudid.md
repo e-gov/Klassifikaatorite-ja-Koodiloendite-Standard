@@ -17,7 +17,7 @@ Koodiloend on piiratud koodide ja kategooriate (koodidele vastavate väärtuste)
 
 | # | Atribuudi nimetus | Määratlus | Kohustuslik | Välja tüüp | Mitmesus | Näide |
 |---|---|---|---|---|---|---|
-| 1 | Tähis (Name) | Koodiloendi tähis. | **Jah** | [NameType](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/composite-types/NameType/) | 0..n | IK_SUGU |
+| 1 | Tähis (CodeListName) | Koodiloendi tähis. | **Jah** | [NameType](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/composite-types/NameType/) | 0..n | IK_SUGU |
 | 2 | Nimetus (Label) | Koodiloendi nimetus. | **Jah** | [LabelType](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/composite-types/LabelType/) | 0..n | Sugu isikukoodist |
 | 3 | Kirjeldus (Description) | Koodiloendi sisu ja eesmärgi kirjeldus. | **Jah** | [StructuredStringType](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/composite-types/StructuredStringType/) | 0..1 | Isiku sugu, mis on tuletatud isikukoodi esimesest numbrist |
 | 4 | Kehtivuse algus (ValidFrom) | Kuupäev, millal koodiloend kehtima hakkas. | Ei | `kuupäev` | 0..1 | 2024-01-01 |
@@ -32,8 +32,8 @@ Koodiloendi element on koodiloendis olev üksik väärtus. Element koosneb koodi
 
 | # | Atribuudi nimetus | Määratlus | Kohustuslik | Välja tüüp | Mitmesus | Näide |
 |---|---|---|---|---|---|---|
-| 1 | Tähis (Name) | Loendi elemendi tähis. | Ei | [NameType](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/composite-types/NameType/) | 0..n |  |
-| 2 | Kood (ItemCode) | Loendi elemendi kood. Elemendil võib olla täht-, number- või tähtnumberkood, mis vastab antud taseme koodide struktuurile. Kood on unikaalne selles koodiloendis, kuhu element kuulub. | **Jah** | `string` | 0..1 | M |
+| 1 | Tähis (CategoryName) | Loendi elemendi tähis. | Ei | [NameType](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/composite-types/NameType/) | 0..n |  |
+| 2 | Kood (Value) | Loendi elemendi kood. Elemendil võib olla täht-, number- või tähtnumberkood, mis vastab antud taseme koodide struktuurile. Kood on unikaalne selles koodiloendis, kuhu element kuulub. | **Jah** | `string` | 0..1 | M |
 | 3 | Nimetus (Label) | Loendi elemendi nimetus. Elemendil on koodiloendi omaniku või haldaja poolt loodud nimetus, mis kirjeldab kategooria sisu. | **Jah** | [LabelType](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/composite-types/LabelType/) | 0..n | Mees |
 | 4 | Kirjeldus (Description) | Loendi elemendi sisu kirjeldus. | Ei | [StructuredStringType](https://docs.ddialliance.org/DDI-Lifecycle/3.3/model/composite-types/StructuredStringType/) | 0..1 |  |
-| 5 | Tase (Level) | Loendi elemendi tase, kui tegemist on hierarhilise loendiga. | Ei | `string` | 0..1 | 1 |
+| 5 | Tase (LevelNumber) | Loendi elemendi tase, kui tegemist on hierarhilise loendiga. | Ei | `mittenegatiivne täisarv` | 0..1 | 1; 2; 3 |
