@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://e-gov.github.io/Klassifikaatorite-ja-Koodiloendite-Standard/baseline/</loc>
+         <lastmod>2026-09-28</lastmod>
+    </url>
+    <url>
+         <loc>https://e-gov.github.io/Klassifikaatorite-ja-Koodiloendite-Standard/baseline/01-ylevaade/</loc>
+         <lastmod>2026-09-28</lastmod>
+    </url>
+    <url>
+         <loc>https://e-gov.github.io/Klassifikaatorite-ja-Koodiloendite-Standard/baseline/klassifikaator/atribuudid/</loc>
+         <lastmod>2026-09-28</lastmod>
+    </url>
+    <url>
+         <loc>https://e-gov.github.io/Klassifikaatorite-ja-Koodiloendite-Standard/baseline/koodiloend/atribuudid/</loc>
+         <lastmod>2026-09-28</lastmod>
+    </url>
+</urlset>
