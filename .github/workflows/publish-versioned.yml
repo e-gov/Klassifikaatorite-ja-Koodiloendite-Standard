@@ -1,0 +1,91 @@
+name: Publish versioned documentation
+
+on:
+  push:
+    branches: [draft]
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: 'bootstrap-stable / republish: main; draft: draft branch'
+        required: true
+        type: choice
+        default: draft
+        options:
+          - draft
+          - bootstrap-stable
+          - republish
+      publish:
+        description: 'Publish to the live GitHub Pages site (false = preview artifact only)'
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+# All versions share one publishing branch/site. Never cancel an active write.
+concurrency:
+  group: klf-versioned-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.repository == 'e-gov/Klassifikaatorite-ja-Koodiloendite-Standard'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install documentation dependencies
+        run: python -m pip install -r requirements-versioned.txt
+      - name: Validate helper logic
+        run: python -m unittest discover -s versioning_tests -v
+      - name: Configure commit author
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+      - name: Build requested version into the isolated publishing branch
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          SOURCE_REF: ${{ github.ref }}
+          OPERATION: ${{ inputs.operation }}
+        run: |
+          python tools/versioned_pages.py --event "$EVENT_NAME" --ref "$SOURCE_REF" --operation "$OPERATION"
+      - name: Export and validate complete site
+        run: |
+          mkdir -p "$RUNNER_TEMP/klf-pages"
+          git archive gh-pages-versioned | tar -x -C "$RUNNER_TEMP/klf-pages"
+          python tools/prepare_pages.py "$RUNNER_TEMP/klf-pages"
+      - name: Save version history (also for previews; does not deploy the site)
+        run: git push origin gh-pages-versioned:gh-pages-versioned
+      - name: Upload complete Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ${{ runner.temp }}/klf-pages
+      - name: Summarize prepared site
+        run: |
+          echo 'Prepared all published versions; no source branch was modified.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Publishing history: gh-pages-versioned. Live deployment is a separate job.' >> "$GITHUB_STEP_SUMMARY"
+
+  deploy:
+    needs: build
+    if: github.event_name == 'push' || inputs.publish == true
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Deploy the complete versioned site
+        id: deployment
+        uses: actions/deploy-pages@v4
