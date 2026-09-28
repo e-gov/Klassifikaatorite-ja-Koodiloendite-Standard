@@ -1,0 +1,2 @@
+INHERIT: mkdocs.versioned.yml
+site_name: Klassifikaatorite ja koodiloendite standard - MUSTAND

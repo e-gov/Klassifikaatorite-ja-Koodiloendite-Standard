@@ -1,0 +1,8 @@
+# Keep this beside mkdocs.yml: inherited relative paths stay unchanged.
+INHERIT: mkdocs.yml
+site_url: https://e-gov.github.io/Klassifikaatorite-ja-Koodiloendite-Standard/
+extra:
+  version:
+    provider: mike
+    default: stable
+    alias: true

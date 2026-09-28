@@ -1,0 +1,38 @@
+name: Check versioned documentation
+
+on:
+  pull_request:
+    branches: [main, draft]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install documentation dependencies
+        run: python -m pip install -r requirements-versioned.txt
+      - name: Validate helper logic
+        run: python -m unittest discover -s versioning_tests -v
+      - name: Build both configurations without publishing
+        run: |
+          python -m mkdocs build --config-file mkdocs.versioned.yml --site-dir "$RUNNER_TEMP/klf-stable-check"
+          python -m mkdocs build --config-file mkdocs.draft.yml --site-dir "$RUNNER_TEMP/klf-draft-check"
+      - name: Smoke-test mike and the complete artifact without pushing
+        run: |
+          git config user.name 'CI validation'
+          git config user.email 'ci-validation@example.invalid'
+          mike deploy --config-file mkdocs.versioned.yml --branch ci-pages --alias-type copy baseline stable
+          mike deploy --config-file mkdocs.draft.yml --branch ci-pages --alias-type copy draft
+          mike set-default --config-file mkdocs.versioned.yml --branch ci-pages stable
+          mkdir -p "$RUNNER_TEMP/klf-pages-check"
+          git archive ci-pages | tar -x -C "$RUNNER_TEMP/klf-pages-check"
+          python tools/prepare_pages.py "$RUNNER_TEMP/klf-pages-check"
