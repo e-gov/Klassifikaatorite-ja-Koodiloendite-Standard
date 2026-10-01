@@ -9,6 +9,7 @@ nav:
   - Ülevaade: 01-ylevaade.md
   - Klassifikaatorite kirjeldamine: klassifikaator/atribuudid.md
   - Koodiloendite kirjeldamine: koodiloend/atribuudid.md
+  - SKOS/XKOS vastendus (mustand): vastendused/skos-xkos.md
 
 extra_css:
   - stylesheets/style.css
