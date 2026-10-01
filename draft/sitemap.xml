@@ -2,18 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://e-gov.github.io/Klassifikaatorite-ja-Koodiloendite-Standard/draft/</loc>
-         <lastmod>2026-09-28</lastmod>
+         <lastmod>2026-10-01</lastmod>
     </url>
     <url>
          <loc>https://e-gov.github.io/Klassifikaatorite-ja-Koodiloendite-Standard/draft/01-ylevaade/</loc>
-         <lastmod>2026-09-28</lastmod>
+         <lastmod>2026-10-01</lastmod>
     </url>
     <url>
          <loc>https://e-gov.github.io/Klassifikaatorite-ja-Koodiloendite-Standard/draft/klassifikaator/atribuudid/</loc>
-         <lastmod>2026-09-28</lastmod>
+         <lastmod>2026-10-01</lastmod>
     </url>
     <url>
          <loc>https://e-gov.github.io/Klassifikaatorite-ja-Koodiloendite-Standard/draft/koodiloend/atribuudid/</loc>
-         <lastmod>2026-09-28</lastmod>
+         <lastmod>2026-10-01</lastmod>
+    </url>
+    <url>
+         <loc>https://e-gov.github.io/Klassifikaatorite-ja-Koodiloendite-Standard/draft/vastendused/skos-xkos/</loc>
+         <lastmod>2026-10-01</lastmod>
     </url>
 </urlset>
