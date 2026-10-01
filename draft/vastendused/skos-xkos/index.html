@@ -11,6 +11,8 @@
         <link rel="canonical" href="https://e-gov.github.io/Klassifikaatorite-ja-Koodiloendite-Standard/draft/vastendused/skos-xkos/">
       
       
+        <link rel="prev" href="../../koodiloend/atribuudid/">
+      
       
       
         
@@ -301,6 +303,108 @@
   
 
     
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SKOS/XKOS vastendus (mustand)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SKOS/XKOS vastendus (mustand)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Sisukord">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sisukord
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pohiobjektide-vastendus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Põhiobjektide vastendus
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Põhiobjektide vastendus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#olekute-tahendus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Olekute tähendus
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -336,27 +440,22 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#klassifikaatori-elemendi-esmane-vastendus" class="md-nav__link">
+    <nav class="md-nav" aria-label="Põhiobjektide vastendus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#olekute-tahendus" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Klassifikaatori elemendi esmane vastendus
+        Olekute tähendus
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#viited" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Viited
-      
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -390,22 +489,34 @@
 </thead>
 <tbody>
 <tr>
-<td>Klassifikaator</td>
+<td>Klassifikaatori perekond</td>
+<td><code>ClassificationFamily</code></td>
+<td><a href="https://rdf-vocabulary.ddialliance.org/xkos.html#classifications-and-classification-schemes" target="_blank" rel="noopener noreferrer">XKOS-i katvusmudel (<code>xkos:covers</code>)</a> või <code>skos:Collection</code></td>
+<td>Vajab modelleerimisotsust</td>
+</tr>
+<tr>
+<td>Klassifikaatorite sari</td>
+<td><code>ClassificationSeries</code></td>
+<td><a href="https://rdf-vocabulary.ddialliance.org/xkos.html#classifications-and-classification-schemes" target="_blank" rel="noopener noreferrer"><code>skos:Concept</code> + versioonide <code>xkos:belongsTo</code></a></td>
+<td>Soovitatav esitus</td>
+</tr>
+<tr>
+<td>Klassifikaator / versioon</td>
 <td><code>StatisticalClassification</code></td>
 <td><a href="https://www.w3.org/TR/skos-reference/#schemes" target="_blank" rel="noopener noreferrer"><code>skos:ConceptScheme</code></a></td>
-<td>Esialgne vaste</td>
+<td>Otsene XKOS-i mudel</td>
 </tr>
 <tr>
 <td>Klassifikaatori tase</td>
 <td><code>ClassificationLevel</code> + <code>LevelContext</code></td>
 <td><a href="https://rdf-vocabulary.ddialliance.org/xkos.html#classification-levels" target="_blank" rel="noopener noreferrer"><code>xkos:ClassificationLevel</code></a></td>
-<td>Esialgne vaste</td>
+<td>Otsene</td>
 </tr>
 <tr>
 <td>Klassifikaatori element</td>
 <td><code>ClassificationItem</code></td>
 <td><a href="https://www.w3.org/TR/skos-reference/#concepts" target="_blank" rel="noopener noreferrer"><code>skos:Concept</code></a></td>
-<td>Esialgne vaste</td>
+<td>Otsene</td>
 </tr>
 <tr>
 <td>Koodiloend</td>
@@ -417,74 +528,633 @@
 <td>Koodiloendi element</td>
 <td><code>CodeType</code> + <code>Category</code></td>
 <td><a href="https://www.w3.org/TR/skos-reference/#concepts" target="_blank" rel="noopener noreferrer"><code>skos:Concept</code></a></td>
-<td>Vajab täpsustamist</td>
-</tr>
-<tr>
-<td>Klassifikaatorite sari</td>
-<td><code>ClassificationSeries</code></td>
-<td><a href="https://rdf-vocabulary.ddialliance.org/xkos.html#classifications-and-classification-schemes" target="_blank" rel="noopener noreferrer">XKOS-i klassifikaatorisari</a></td>
-<td>Vajab täpsustamist</td>
+<td>Vajab identiteedireeglit</td>
 </tr>
 <tr>
 <td>Vastavustabel</td>
 <td><code>ClassificationCorrespondenceTable</code></td>
 <td><a href="https://rdf-vocabulary.ddialliance.org/xkos.html#correspondences-and-concept-associations" target="_blank" rel="noopener noreferrer"><code>xkos:Correspondence</code></a></td>
-<td>Esialgne vaste</td>
+<td>Otsene</td>
 </tr>
 <tr>
 <td>Vastendus</td>
 <td><code>ClassificationMapType</code></td>
 <td><a href="https://rdf-vocabulary.ddialliance.org/xkos.html#correspondences-and-concept-associations" target="_blank" rel="noopener noreferrer"><code>xkos:ConceptAssociation</code></a></td>
-<td>Esialgne vaste</td>
+<td>Otsene struktuurne vaste</td>
 </tr>
 </tbody>
 </table>
-<h2 id="klassifikaatori-elemendi-esmane-vastendus">Klassifikaatori elemendi esmane vastendus</h2>
+<h3 id="olekute-tahendus">Olekute tähendus</h3>
+<ul>
+<li><strong>Otsene</strong> – sihtmudelis on sama ülesandega klass või omadus.</li>
+<li><strong>Hea vaste</strong> – praktiliselt sobiv vaste, kuid tähendus ei pruugi olla formaalselt identne.</li>
+<li><strong>Osaline / teisendusreegel</strong> – info saab esitada, kuid teisendus vajab kokkulepitud reeglit.</li>
+<li><strong>Profiililaiendus</strong> – SKOS/XKOS-is ei ole piisavalt täpset omadust. Peab otsustama, kas kasutada muud RDF-sõnavara või oma omadust.</li>
+</ul>
+<hr />
+<h1 id="atribuutide-esialgne-vastendus">Atribuutide esialgne vastendus</h1>
+<h2 id="1-klassifikaatori-perekond-classificationfamily">1. Klassifikaatori perekond (<code>ClassificationFamily</code>)</h2>
 <table>
 <thead>
 <tr>
-<th>Standardi väli</th>
-<th>SKOS/XKOS</th>
-<th>Märkus</th>
+<th>DDI-põhine atribuut</th>
+<th>RDF/SKOS/XKOS vaste</th>
+<th>Olek / märkus</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>ItemCode</code></td>
-<td><a href="https://www.w3.org/TR/skos-reference/#notations" target="_blank" rel="noopener noreferrer"><code>skos:notation</code></a></td>
-<td>Elemendi kood</td>
+<td>Tähis (<code>Name</code>)</td>
+<td><a href="http://purl.org/dc/terms/identifier" target="_blank" rel="noopener noreferrer"><code>dcterms:identifier</code></a></td>
+<td>Hea vaste</td>
 </tr>
 <tr>
-<td><code>Label</code></td>
+<td>Nimetus (<code>Label</code>)</td>
 <td><a href="https://www.w3.org/TR/skos-reference/#labels" target="_blank" rel="noopener noreferrer"><code>skos:prefLabel</code></a></td>
-<td>Eelistatud nimetus</td>
+<td>Hea vaste, kui perekond on RDF-ressurss</td>
 </tr>
 <tr>
-<td>Ülem-element</td>
-<td><a href="https://www.w3.org/TR/skos-reference/#semantic-relations" target="_blank" rel="noopener noreferrer"><code>skos:broader</code></a></td>
-<td>Hierarhiline seos</td>
+<td>Kirjeldus (<code>Description</code>)</td>
+<td><a href="http://purl.org/dc/terms/description" target="_blank" rel="noopener noreferrer"><code>dcterms:description</code></a></td>
+<td>Hea vaste</td>
 </tr>
 <tr>
-<td><code>Includes</code></td>
-<td><a href="https://rdf-vocabulary.ddialliance.org/xkos.html#documentation-properties" target="_blank" rel="noopener noreferrer"><code>xkos:coreContentNote</code></a></td>
-<td>Kaasa arvatud</td>
-</tr>
-<tr>
-<td><code>IncludesAlso</code></td>
-<td><a href="https://rdf-vocabulary.ddialliance.org/xkos.html#documentation-properties" target="_blank" rel="noopener noreferrer"><code>xkos:additionalContentNote</code></a></td>
-<td>Lisaks kaasa arvatud</td>
-</tr>
-<tr>
-<td><code>Excludes</code></td>
-<td><a href="https://rdf-vocabulary.ddialliance.org/xkos.html#documentation-properties" target="_blank" rel="noopener noreferrer"><code>xkos:exclusionNote</code></a></td>
-<td>Välja arvatud</td>
+<td>Klassifikaatorite sarjad (<code>ClassificationSeriesReference</code>)</td>
+<td><code>skos:member</code> <strong>ainult siis</strong>, kui perekond modelleeritakse <code>skos:Collection</code>-ina</td>
+<td>Vajab modelleerimisotsust; XKOS ise käsitleb klassifikaatoriperekondi pigem katvuse (<code>xkos:covers</code>) kaudu</td>
 </tr>
 </tbody>
 </table>
-<h2 id="viited">Viited</h2>
+<h2 id="2-klassifikaatorite-sari-classificationseries">2. Klassifikaatorite sari (<code>ClassificationSeries</code>)</h2>
+<p>XKOS-is on soovituslikult üks klassifikaatorit kui versioonidest sõltumatut tervikut tähistav <code>skos:Concept</code>, mille külge versioonid (<code>skos:ConceptScheme</code>) seotakse omadusega <code>xkos:belongsTo</code>.</p>
+<table>
+<thead>
+<tr>
+<th>DDI-põhine atribuut</th>
+<th>RDF/SKOS/XKOS vaste</th>
+<th>Olek / märkus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tähis (<code>Name</code>)</td>
+<td><code>dcterms:identifier</code></td>
+<td>Hea vaste</td>
+</tr>
+<tr>
+<td>Nimetus (<code>Label</code>)</td>
+<td><code>skos:prefLabel</code></td>
+<td>Hea vaste</td>
+</tr>
+<tr>
+<td>Kirjeldus (<code>Description</code>)</td>
+<td><code>dcterms:description</code></td>
+<td>Hea vaste</td>
+</tr>
+<tr>
+<td>Kontekst (<code>SeriesContext</code>)</td>
+<td><code>dcterms:description</code> või profiili eraldi omadus</td>
+<td>Osaline; üldkirjeldusse liitmine võib tähendust nõrgendada</td>
+</tr>
+<tr>
+<td>Teema (<code>SubjectArea</code>)</td>
+<td><a href="https://rdf-vocabulary.ddialliance.org/xkos.html#classifications-and-classification-schemes" target="_blank" rel="noopener noreferrer"><code>xkos:covers</code></a> → <code>skos:Concept</code></td>
+<td>Hea vaste, kui teema esitatakse kontrollitud mõistena</td>
+</tr>
+<tr>
+<td>Sarja kuuluvad klassifikaatorid (<code>StatisticalClassificationReference</code>)</td>
+<td>versioon → sari: <a href="https://rdf-vocabulary.ddialliance.org/xkos.html#classifications-and-classification-schemes" target="_blank" rel="noopener noreferrer"><code>xkos:belongsTo</code></a></td>
+<td>Otsene, kuid seose suund on DDI kirjeldusest vastupidine</td>
+</tr>
+<tr>
+<td>Kehtiv versioon (<code>CurrentStatisticalClassificationReference</code>)</td>
+<td>tuletatav versioonide kehtivusinfost (<code>dcterms:valid</code>)</td>
+<td>Profiilireegel; XKOS-is eraldi <code>currentVersion</code> omadust ei ole</td>
+</tr>
+<tr>
+<td>Omanik (<code>OwnerReference</code>)</td>
+<td>otsene SKOS/XKOS vaste puudub</td>
+<td>Profiililaiendus; omanik, haldaja ja avaldaja ei ole sama roll</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-klassifikaator-versioon-statisticalclassification">3. Klassifikaator / versioon (<code>StatisticalClassification</code>)</h2>
+<table>
+<thead>
+<tr>
+<th>DDI-põhine atribuut</th>
+<th>RDF/SKOS/XKOS vaste</th>
+<th>Olek / märkus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tähis (<code>Name</code>)</td>
+<td><code>dcterms:identifier</code></td>
+<td>Hea vaste</td>
+</tr>
+<tr>
+<td>Nimetus (<code>Label</code>)</td>
+<td><code>skos:prefLabel</code></td>
+<td>Hea vaste</td>
+</tr>
+<tr>
+<td>Kirjeldus (<code>Description</code>)</td>
+<td><code>dcterms:description</code></td>
+<td>Hea vaste</td>
+</tr>
+<tr>
+<td>Kehtivus (<code>IsCurrent</code>)</td>
+<td>tuletatav <code>dcterms:valid</code> väärtusest ja tänasest kuupäevast</td>
+<td>Profiilireegel; eraldi boolean pole vajalik, kui kehtivusaeg on masinloetav</td>
+</tr>
+<tr>
+<td>Kehtiv alates (<code>ReleaseDate</code>)</td>
+<td><a href="http://purl.org/dc/terms/valid" target="_blank" rel="noopener noreferrer"><code>dcterms:valid</code></a></td>
+<td>Osaline; profiilis tuleb kokku leppida algus- ja lõppkuupäeva esitus</td>
+</tr>
+<tr>
+<td>Kehtiv kuni (<code>TerminationDate</code>)</td>
+<td><code>dcterms:valid</code></td>
+<td>Osaline; sama kehtivusintervalli lõpp</td>
+</tr>
+<tr>
+<td>Õiguslik alus (<code>LegalBase</code>)</td>
+<td><code>dcterms:relation</code></td>
+<td>Üldine vaste; täpsem õigusaktide sõnavara võib olla parem</td>
+</tr>
+<tr>
+<td>Autoriõigus (<code>Copyright</code>)</td>
+<td><code>dcterms:rights</code></td>
+<td>Hea vaste</td>
+</tr>
+<tr>
+<td>Avaldamine (<code>Publication</code>)</td>
+<td><code>dcterms:relation</code></td>
+<td>Hea üldvaste; võib hiljem täpsustada</td>
+</tr>
+<tr>
+<td>Levitamine on lubatud (<code>IsDisseminationAllowed</code>)</td>
+<td><code>dcterms:rights</code> / litsentsist tuletatav või profiili boolean</td>
+<td>Profiilireegel</td>
+</tr>
+<tr>
+<td>Tasemed (<code>LevelContext</code>)</td>
+<td><a href="https://rdf-vocabulary.ddialliance.org/xkos.html#classification-levels" target="_blank" rel="noopener noreferrer"><code>xkos:levels</code></a> + <code>xkos:numberOfLevels</code></td>
+<td>Otsene struktuurne vaste</td>
+</tr>
+<tr>
+<td>Eelnev klassifikaator (<code>PredecessorReference</code>)</td>
+<td><a href="https://rdf-vocabulary.ddialliance.org/xkos.html#classifications-and-classification-schemes" target="_blank" rel="noopener noreferrer"><code>xkos:follows</code></a></td>
+<td>Otsene: uus versioon <code>xkos:follows</code> eelmist</td>
+</tr>
+<tr>
+<td>Järgnev klassifikaator (<code>SuccessorReference</code>)</td>
+<td>järgmine versioon → käesolev: <code>xkos:follows</code></td>
+<td>Otsene info, kuid RDF-tripi suund tuleb pöörata</td>
+</tr>
+<tr>
+<td>Lähteklassifikaator (<code>DerivedFromReference</code>)</td>
+<td><a href="https://www.w3.org/TR/prov-o/#wasDerivedFrom" target="_blank" rel="noopener noreferrer"><code>prov:wasDerivedFrom</code></a></td>
+<td>Hea väline RDF-vastendus; XKOS-is otsest omadust pole</td>
+</tr>
+<tr>
+<td>Muudatused võrreldes eelmisega (<code>ChangesFromPreceding</code>)</td>
+<td><code>skos:changeNote</code></td>
+<td>Hea vaste</td>
+</tr>
+<tr>
+<td>Lisamaterjalid (<code>RelatedOtherMaterialReference</code>)</td>
+<td><code>dcterms:relation</code></td>
+<td>Hea üldvaste</td>
+</tr>
+<tr>
+<td>Versioon (<code>IsVersion</code>)</td>
+<td>esitus <code>skos:ConceptScheme</code>-ina ja <code>xkos:belongsTo</code> seos</td>
+<td>Pigem tuletatav; eraldi boolean ei ole RDF-is vajalik</td>
+</tr>
+<tr>
+<td>Aegpidevus (<code>IsFloating</code>)</td>
+<td>otsene SKOS/XKOS vaste puudub</td>
+<td>Profiililaiendus</td>
+</tr>
+<tr>
+<td>Uuendus (<code>IsUpdate</code>)</td>
+<td>otsene SKOS/XKOS vaste puudub</td>
+<td>Profiililaiendus</td>
+</tr>
+<tr>
+<td>Uuendused on lubatud (<code>UpdatesAllowed</code>)</td>
+<td>otsene SKOS/XKOS vaste puudub</td>
+<td>Profiililaiendus</td>
+</tr>
+<tr>
+<td>Lubatavad uuendused (<code>PermissibleUpdates</code>)</td>
+<td><code>skos:editorialNote</code> või profiili eraldi omadus</td>
+<td>Osaline; tähendus ei ole päris SKOS-i editorial note</td>
+</tr>
+<tr>
+<td>Uuendused (<code>Updates</code>)</td>
+<td><code>skos:changeNote</code></td>
+<td>Hea vaste</td>
+</tr>
+<tr>
+<td>Alusklassifikaator (<code>VariantOfReference</code>)</td>
+<td><a href="https://rdf-vocabulary.ddialliance.org/xkos.html#classifications-and-classification-schemes" target="_blank" rel="noopener noreferrer"><code>xkos:variant</code></a></td>
+<td>Otsene seos, kuid XKOS-i soovituslik suund on alus → variant</td>
+</tr>
+<tr>
+<td>Muudatused võrreldes baasklassifikaatoriga (<code>VariantChangesFromBase</code>)</td>
+<td><code>skos:changeNote</code></td>
+<td>Hea esialgne vaste</td>
+</tr>
+<tr>
+<td>Variandi loomise põhjus (<code>VariantPurpose</code>)</td>
+<td><code>dcterms:description</code> või <code>skos:note</code></td>
+<td>Osaline</td>
+</tr>
+<tr>
+<td>Haldaja (<code>MaintenanceUnitReference</code>)</td>
+<td>otsene SKOS/XKOS vaste puudub</td>
+<td>Profiililaiendus; võib hiljem kasutada eraldi organisatsiooni/andmekataloogi sõnavara</td>
+</tr>
+<tr>
+<td>Kontaktandmed (<code>ContactPersonReference</code>)</td>
+<td>otsene SKOS/XKOS vaste puudub</td>
+<td>Profiililaiendus; nt DCAT/vCard on võimalik lisasõnavara</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-klassifikaatori-tase-classificationlevel-levelcontext">4. Klassifikaatori tase (<code>ClassificationLevel</code> + <code>LevelContext</code>)</h2>
+<table>
+<thead>
+<tr>
+<th>DDI-põhine atribuut</th>
+<th>RDF/SKOS/XKOS vaste</th>
+<th>Olek / märkus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tähis (<code>Name</code>)</td>
+<td><code>dcterms:identifier</code></td>
+<td>Hea vaste</td>
+</tr>
+<tr>
+<td>Nimetus (<code>Label</code>)</td>
+<td><code>skos:prefLabel</code></td>
+<td>Hea vaste</td>
+</tr>
+<tr>
+<td>Kirjeldus (<code>Description</code>)</td>
+<td><code>dcterms:description</code></td>
+<td>Hea vaste</td>
+</tr>
+<tr>
+<td>Taseme number (<code>LevelContext/LevelNumber</code>)</td>
+<td><a href="https://rdf-vocabulary.ddialliance.org/xkos.html#classification-levels" target="_blank" rel="noopener noreferrer"><code>xkos:depth</code></a></td>
+<td>Otsene</td>
+</tr>
+<tr>
+<td>Taseme koodi tüüp (<code>LevelCodeType</code>)</td>
+<td>võib kajastuda <code>skos:notation</code> andmetüübis; otsene taseme omadus puudub</td>
+<td>Osaline / profiilireegel</td>
+</tr>
+<tr>
+<td>Taseme koodi struktuur (<code>LevelCodeStructure</code>)</td>
+<td><a href="https://rdf-vocabulary.ddialliance.org/xkos.html#classification-levels" target="_blank" rel="noopener noreferrer"><code>xkos:notationPattern</code></a></td>
+<td>Hea vaste, kui struktuur teisendatakse regulaaravaldiseks</td>
+</tr>
+<tr>
+<td>Fiktiivne kood (<code>DummyCode</code>)</td>
+<td>otsene XKOS-vastendus puudub</td>
+<td>Profiililaiendus</td>
+</tr>
+<tr>
+<td>Viide määratlevale mõistele (<code>DefiningConceptReference</code>)</td>
+<td><a href="https://rdf-vocabulary.ddialliance.org/xkos.html#classification-levels" target="_blank" rel="noopener noreferrer"><code>xkos:organizedBy</code></a></td>
+<td>Otsene</td>
+</tr>
+<tr>
+<td>Tasemesse kuuluvad elemendid (<code>LevelContext</code> liikmesus)</td>
+<td><code>skos:member</code></td>
+<td>Otsene: tase → element</td>
+</tr>
+<tr>
+<td>Klassifikaatori tasemete järjestus</td>
+<td><code>xkos:levels</code> RDF-loendina</td>
+<td>Otsene XKOS-i struktuur</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-klassifikaatori-element-classificationitem">5. Klassifikaatori element (<code>ClassificationItem</code>)</h2>
+<table>
+<thead>
+<tr>
+<th>DDI-põhine atribuut</th>
+<th>RDF/SKOS/XKOS vaste</th>
+<th>Olek / märkus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tähis (<code>Name</code>)</td>
+<td><code>dcterms:identifier</code> või <code>skos:altLabel</code></td>
+<td>Vajab reeglit: kas väärtus on identifikaator või alternatiivne nimetus</td>
+</tr>
+<tr>
+<td>Nimetus (<code>Label</code>)</td>
+<td><code>skos:prefLabel</code></td>
+<td>Otsene; üks eelistatud nimetus ühe keele kohta</td>
+</tr>
+<tr>
+<td>Kirjeldus (<code>Description</code>)</td>
+<td><code>skos:definition</code> või <code>dcterms:description</code></td>
+<td>Vajab reeglit: kas tekst on definitsioon või üldkirjeldus</td>
+</tr>
+<tr>
+<td>Väärtus (<code>ItemCode / Value</code>)</td>
+<td><a href="https://www.w3.org/TR/skos-reference/#notations" target="_blank" rel="noopener noreferrer"><code>skos:notation</code></a></td>
+<td>Otsene</td>
+</tr>
+<tr>
+<td>Kaasa arvatud (<code>Includes</code>)</td>
+<td><a href="https://rdf-vocabulary.ddialliance.org/xkos.html#documentation-properties" target="_blank" rel="noopener noreferrer"><code>xkos:coreContentNote</code></a></td>
+<td>Otsene</td>
+</tr>
+<tr>
+<td>Lisaks kaasa arvatud (<code>IncludesAlso</code>)</td>
+<td><a href="https://rdf-vocabulary.ddialliance.org/xkos.html#documentation-properties" target="_blank" rel="noopener noreferrer"><code>xkos:additionalContentNote</code></a></td>
+<td>Otsene</td>
+</tr>
+<tr>
+<td>Välja arvatud (<code>Excludes</code>)</td>
+<td><a href="https://rdf-vocabulary.ddialliance.org/xkos.html#documentation-properties" target="_blank" rel="noopener noreferrer"><code>xkos:exclusionNote</code></a></td>
+<td>Otsene</td>
+</tr>
+<tr>
+<td>Tuleviku sündmused (<code>FutureEvents</code>)</td>
+<td><code>skos:changeNote</code> või profiili eraldi omadus</td>
+<td>Osaline; changeNote ei erista tulevikku minevikust</td>
+</tr>
+<tr>
+<td>Muudatused eelnevast versioonist (<code>ChangesFromPriorVersion</code>)</td>
+<td><code>skos:changeNote</code></td>
+<td>Hea vaste</td>
+</tr>
+<tr>
+<td>Uuendused (<code>Updates</code>)</td>
+<td><code>skos:changeNote</code></td>
+<td>Hea vaste</td>
+</tr>
+<tr>
+<td>Kehtiv alates (<code>ValidFrom</code>)</td>
+<td><code>dcterms:valid</code></td>
+<td>Osaline; algus/lõpp vajavad profiilireeglit</td>
+</tr>
+<tr>
+<td>Kehtiv kuni (<code>ValidTo</code>)</td>
+<td><code>dcterms:valid</code></td>
+<td>Osaline</td>
+</tr>
+<tr>
+<td>On genereeritud (<code>IsGenerated</code>)</td>
+<td>otsene SKOS/XKOS vaste puudub</td>
+<td>Profiililaiendus</td>
+</tr>
+<tr>
+<td>On kehtiv (<code>IsValid</code>)</td>
+<td>kehtivusinfost tuletatav</td>
+<td>Profiilireegel</td>
+</tr>
+<tr>
+<td>Kuulub klassifikaatorisse</td>
+<td><code>skos:inScheme</code></td>
+<td>Otsene struktuurne seos</td>
+</tr>
+<tr>
+<td>Ülem-element (<code>ParentClassificationItemReference</code>)</td>
+<td><a href="https://www.w3.org/TR/skos-reference/#semantic-relations" target="_blank" rel="noopener noreferrer"><code>skos:broader</code></a></td>
+<td>Soovitatav lisada standardi nähtava väljana; spetsiifilisema suhte korral võib kasutada XKOS-i hierarhiasuhteid</td>
+</tr>
+<tr>
+<td>Mõõtühik (<code>Measurement Unit</code>)</td>
+<td>otsene SKOS/XKOS vaste puudub</td>
+<td>Vajadusel eraldi mõõtühikute sõnavara (nt QUDT/OM) või profiililaiendus</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-klassifikaatori-vastavustabel-classificationcorrespondencetable">6. Klassifikaatori vastavustabel (<code>ClassificationCorrespondenceTable</code>)</h2>
+<table>
+<thead>
+<tr>
+<th>DDI-põhine atribuut</th>
+<th>RDF/SKOS/XKOS vaste</th>
+<th>Olek / märkus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tähis (<code>Name</code>)</td>
+<td><code>dcterms:identifier</code></td>
+<td>Hea vaste</td>
+</tr>
+<tr>
+<td>Nimetus (<code>Label</code>)</td>
+<td><code>dcterms:title</code></td>
+<td>Hea vaste</td>
+</tr>
+<tr>
+<td>Kirjeldus (<code>Description</code>)</td>
+<td><code>dcterms:description</code></td>
+<td>Hea vaste</td>
+</tr>
+<tr>
+<td>Omanikud (<code>OwnerReference</code>)</td>
+<td>otsene SKOS/XKOS vaste puudub</td>
+<td>Profiililaiendus</td>
+</tr>
+<tr>
+<td>Haldajad (<code>MaintenanceUnitReference</code>)</td>
+<td>otsene SKOS/XKOS vaste puudub</td>
+<td>Profiililaiendus</td>
+</tr>
+<tr>
+<td>Kontaktisikud (<code>ContactPersonReference</code>)</td>
+<td>otsene SKOS/XKOS vaste puudub</td>
+<td>Profiililaiendus / lisasõnavara</td>
+</tr>
+<tr>
+<td>Publikatsioonid (<code>Publication</code>)</td>
+<td><code>dcterms:relation</code></td>
+<td>Hea üldvaste</td>
+</tr>
+<tr>
+<td>Aegpideva vastavuse kuupäev (<code>FloatingMapDate</code>)</td>
+<td><code>dcterms:date</code></td>
+<td>Hea esialgne vaste; see on hetktõmmise kuupäev, mitte tingimata kehtivusintervall</td>
+</tr>
+<tr>
+<td>Lähteklassifikaator (<code>SourceClassificationReference</code>)</td>
+<td><a href="https://rdf-vocabulary.ddialliance.org/xkos.html#correspondences-and-concept-associations" target="_blank" rel="noopener noreferrer"><code>xkos:compares</code></a></td>
+<td>Osaline: <code>xkos:compares</code> ei väljenda lähte-/sihtsuunda</td>
+</tr>
+<tr>
+<td>Sihtklassifikaator (<code>TargetClassificationReference</code>)</td>
+<td><code>xkos:compares</code></td>
+<td>Osaline: suuna säilitamiseks on vaja profiilireeglit või laiendust</td>
+</tr>
+<tr>
+<td>Lähtetase (<code>SourceLevelReference</code>)</td>
+<td>otsene XKOS Correspondence-vastendus puudub</td>
+<td>Profiililaiendus</td>
+</tr>
+<tr>
+<td>Sihttase (<code>TargetLevelReference</code>)</td>
+<td>otsene XKOS Correspondence-vastendus puudub</td>
+<td>Profiililaiendus</td>
+</tr>
+<tr>
+<td>Kardinaalsus (<code>RelationshipMappingType</code>)</td>
+<td>tuletatav <code>xkos:ConceptAssociation</code> lähte- ja sihtmõistete arvust</td>
+<td>Profiilireegel; XKOS ei vaja eraldi 1:1/1:N välja</td>
+</tr>
+</tbody>
+</table>
+<p>Lisaks seotakse vastavustabel selle vastendustega omaduse <code>xkos:madeOf</code> abil.</p>
+<h2 id="7-vastendus-classificationmaptype-xkosconceptassociation">7. Vastendus (<code>ClassificationMapType</code> → <code>xkos:ConceptAssociation</code>)</h2>
+<table>
+<thead>
+<tr>
+<th>DDI-põhine atribuut</th>
+<th>RDF/SKOS/XKOS vaste</th>
+<th>Olek / märkus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lähteelement (<code>SourceClassificationItemReference</code>)</td>
+<td><a href="https://rdf-vocabulary.ddialliance.org/xkos.html#correspondences-and-concept-associations" target="_blank" rel="noopener noreferrer"><code>xkos:sourceConcept</code></a></td>
+<td>Otsene</td>
+</tr>
+<tr>
+<td>Sihtelement (<code>TargetClassificationItemReference</code>)</td>
+<td><a href="https://rdf-vocabulary.ddialliance.org/xkos.html#correspondences-and-concept-associations" target="_blank" rel="noopener noreferrer"><code>xkos:targetConcept</code></a></td>
+<td>Otsene</td>
+</tr>
+<tr>
+<td>On lõplik (<code>IsComplete</code>)</td>
+<td>otsene XKOS vaste puudub</td>
+<td>Profiililaiendus; <strong>ei tohi automaatselt teisendada <code>skos:exactMatch</code>-iks</strong></td>
+</tr>
+<tr>
+<td>Kehtiv alates (<code>ValidFrom</code>)</td>
+<td><code>dcterms:valid</code></td>
+<td>Osaline; profiilis määrata intervalli esitus</td>
+</tr>
+<tr>
+<td>Kehtiv kuni (<code>ValidTo</code>)</td>
+<td><code>dcterms:valid</code></td>
+<td>Osaline</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-koodiloend-codelist">8. Koodiloend (<code>CodeList</code>)</h2>
+<table>
+<thead>
+<tr>
+<th>DDI-põhine atribuut</th>
+<th>RDF/SKOS/XKOS vaste</th>
+<th>Olek / märkus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tähis (<code>Name</code>)</td>
+<td><code>dcterms:identifier</code></td>
+<td>Hea vaste</td>
+</tr>
+<tr>
+<td>Nimetus (<code>Label</code>)</td>
+<td><code>skos:prefLabel</code></td>
+<td>Hea vaste</td>
+</tr>
+<tr>
+<td>Kirjeldus (<code>Description</code>)</td>
+<td><code>dcterms:description</code></td>
+<td>Hea vaste</td>
+</tr>
+<tr>
+<td>Kehtivuse algus (<code>ValidFrom</code>)</td>
+<td><code>dcterms:valid</code></td>
+<td>Osaline; intervalli esitus vajab reeglit</td>
+</tr>
+<tr>
+<td>Kehtivuse lõpp (<code>ValidTo</code>)</td>
+<td><code>dcterms:valid</code></td>
+<td>Osaline</td>
+</tr>
+<tr>
+<td>Omanik/haldaja (<code>MaintenanceUnitReference</code>)</td>
+<td>otsene SKOS/XKOS vaste puudub</td>
+<td>Profiililaiendus</td>
+</tr>
+<tr>
+<td>Kontaktandmed (<code>ContactPersonReference</code>)</td>
+<td>otsene SKOS/XKOS vaste puudub</td>
+<td>Profiililaiendus / lisasõnavara</td>
+</tr>
+</tbody>
+</table>
+<h2 id="9-koodiloendi-element-codetype-category">9. Koodiloendi element (<code>CodeType</code> + <code>Category</code>)</h2>
+<table>
+<thead>
+<tr>
+<th>DDI-põhine atribuut</th>
+<th>RDF/SKOS/XKOS vaste</th>
+<th>Olek / märkus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tähis (<code>Name</code>)</td>
+<td><code>dcterms:identifier</code> või <code>skos:altLabel</code></td>
+<td>Vajab semantilist reeglit</td>
+</tr>
+<tr>
+<td>Kood (<code>ItemCode</code>)</td>
+<td><code>skos:notation</code></td>
+<td>Otsene</td>
+</tr>
+<tr>
+<td>Nimetus (<code>Label</code>)</td>
+<td><code>skos:prefLabel</code></td>
+<td>Otsene</td>
+</tr>
+<tr>
+<td>Kirjeldus (<code>Description</code>)</td>
+<td><code>skos:definition</code> või <code>dcterms:description</code></td>
+<td>Vajab reeglit</td>
+</tr>
+<tr>
+<td>Tase (<code>Level</code>)</td>
+<td>hierarhilise loendi korral võimalik <code>xkos:ClassificationLevel</code> + <code>skos:member</code></td>
+<td>XKOS-i kasutamisel hea esitus; puhtas SKOS-is taseme konstruktsiooni ei ole</td>
+</tr>
+<tr>
+<td>Kuulub koodiloendisse</td>
+<td><code>skos:inScheme</code></td>
+<td>Otsene struktuurne seos</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="kasutatavad-pohisonavarad">Kasutatavad põhisõnavarad</h2>
 <ul>
 <li><a href="https://www.w3.org/TR/skos-reference/" target="_blank" rel="noopener noreferrer">SKOS Simple Knowledge Organization System Reference (W3C)</a></li>
 <li><a href="https://rdf-vocabulary.ddialliance.org/xkos.html" target="_blank" rel="noopener noreferrer">XKOS: Extended Knowledge Organization System (DDI Alliance)</a></li>
+<li><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/" target="_blank" rel="noopener noreferrer">DCMI Metadata Terms</a></li>
+<li><a href="https://www.w3.org/TR/prov-o/" target="_blank" rel="noopener noreferrer">PROV-O: The PROV Ontology</a></li>
 </ul>
 
 
